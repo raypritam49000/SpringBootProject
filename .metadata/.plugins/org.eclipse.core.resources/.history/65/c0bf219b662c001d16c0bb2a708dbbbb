@@ -1,0 +1,5 @@
+package com.consume.rest.api.config;
+
+public class WebClient {
+
+}

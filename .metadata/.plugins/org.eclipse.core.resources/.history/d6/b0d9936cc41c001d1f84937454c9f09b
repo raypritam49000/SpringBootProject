@@ -1,0 +1,49 @@
+package com.ray.pritam.cache.services;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
+import org.springframework.stereotype.Service;
+
+import com.ray.pritam.cache.entity.Customer;
+import com.ray.pritam.cache.repository.CustomerRepository;
+
+@Service
+public class CustomerServiceImpl implements CustomerService {
+
+	@Autowired
+	private CustomerRepository customerRepository;
+	
+	@Cacheable(cacheNames = "customers")
+	@Override
+	public Customer createCustomer(Customer customer) {
+		return customerRepository.save(customer);
+	}
+
+	@Cacheable(cacheNames="customers")
+	@Override
+	public List<Customer> getAllCustomers() {  
+		return customerRepository.findAll();
+	}
+
+	@Override
+	public Customer getCustomer(Long id) {
+		return customerRepository.findById(id).get();
+	}
+
+	@Override
+	public Boolean deleteCustomer(Long id) throws Exception{
+		Customer customer = customerRepository.findById(id).get();
+		if(customer==null) {
+			throw new Exception("Customer Not Found");
+		}
+		return ;
+	}
+
+	@Override
+	public Customer updateCustomer(Long id) {
+		return null;
+	}
+
+}

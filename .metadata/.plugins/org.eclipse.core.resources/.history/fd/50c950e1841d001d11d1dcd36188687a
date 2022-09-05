@@ -1,0 +1,13 @@
+package com.ray.pritam.config;
+@Configuration
+public class AppConfig {
+    @Bean
+    public ChuckNorrisClient chuckNorrisClient() throws Exception {
+        WebClient webClient = WebClient.builder()
+                .baseUrl("https://api.chucknorris.io/")
+                .build();
+        HttpServiceProxyFactory factory = new HttpServiceProxyFactory(new WebClientAdapter(webClient));
+        factory.afterPropertiesSet();
+        return factory.createClient(ChuckNorrisClient.class);
+    }
+}

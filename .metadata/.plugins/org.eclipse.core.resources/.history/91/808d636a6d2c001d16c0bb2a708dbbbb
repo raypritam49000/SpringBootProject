@@ -1,0 +1,34 @@
+package com.consume.rest.api;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.http.MediaType;
+import org.springframework.web.reactive.function.client.WebClient;
+
+import com.consume.rest.api.models.Book;
+
+import reactor.core.publisher.Flux;
+
+@SpringBootApplication
+public class WebFluxConsumeApiDemoApplication implements CommandLineRunner {
+
+	@Autowired
+	private WebClient webClient;
+
+	public static void main(String[] args) {
+		SpringApplication.run(WebFluxConsumeApiDemoApplication.class, args);
+	}
+
+	@Override
+	public void run(String... args) throws Exception {
+//		Flux<Book> books = webClient.get().uri("/").accept(MediaType.APPLICATION_JSON).retrieve()
+//				.bodyToFlux(Book.class);
+//		System.out.println(books.collectList().block());
+		
+		
+		webClient.get().uri("/").retrieve().bodyToFlux(Book.class);
+	}
+
+}

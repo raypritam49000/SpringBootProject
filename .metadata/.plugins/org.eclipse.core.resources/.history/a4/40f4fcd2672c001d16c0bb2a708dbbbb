@@ -1,0 +1,33 @@
+package com.consume.rest.api;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.web.reactive.function.client.WebClient;
+
+@SpringBootApplication
+public class WebFluxConsumeApiDemoApplication implements CommandLineRunner{
+	
+	@Autowired
+	private WebClient webClient;
+
+	public static void main(String[] args) {
+		SpringApplication.run(WebFluxConsumeApiDemoApplication.class, args);
+	}
+
+	@Override
+	public void run(String... args) throws Exception {
+		client.get()
+		
+		                    .uri("/students")
+		17
+		                    .headers(headers -> headers.setBasicAuth("user", "userpwd"))
+		18
+		                    .retrieve()
+		19
+		                    .bodyToFlux(Student.class);
+		
+	}
+
+}

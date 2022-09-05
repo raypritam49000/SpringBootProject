@@ -1,0 +1,14 @@
+package com.consume.rest.api.services;
+
+import java.util.List;
+
+import com.consume.rest.api.models.Book;
+
+public class BookServiceImpl implements BookService{
+
+	@Override
+	public List<Book> findAll() {
+		return null;
+	}
+
+}

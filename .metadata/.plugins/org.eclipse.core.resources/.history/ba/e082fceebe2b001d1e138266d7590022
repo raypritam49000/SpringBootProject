@@ -1,0 +1,21 @@
+package com.cache.api;
+
+import org.springframework.boot.ApplicationArguments;
+import org.springframework.boot.ApplicationRunner;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class SpringBootWithCacheDemoApplication implements ApplicationRunner{
+
+	public static void main(String[] args) {
+		SpringApplication.run(SpringBootWithCacheDemoApplication.class, args);
+	}
+
+	@Override
+	public void run(ApplicationArguments args) throws Exception {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

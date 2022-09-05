@@ -1,0 +1,5 @@
+package com.rest.api.response;
+
+public class Response {
+
+}

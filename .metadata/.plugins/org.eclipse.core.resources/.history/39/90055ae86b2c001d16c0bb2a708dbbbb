@@ -1,0 +1,5 @@
+package com.consume.rest.api.controllers;
+
+public class BookController {
+
+}

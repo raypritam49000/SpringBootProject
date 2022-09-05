@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;UserController.java&apos; to &apos;UserManagementSystemDemo/src/main/java/com.user.management.system.contollers&apos;&#x0D;&#x0A;- Original project: &apos;SpringBoot-Docker-Demo&apos;&#x0D;&#x0A;- Destination element: &apos;UserManagementSystemDemo/src/main/java/com.user.management.system.contollers&apos;&#x0D;&#x0A;- Original element: &apos;com.rest.api.demo.controllers.UserController.java&apos;" description="Copy compilation unit" destination="=UserManagementSystemDemo/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.user.management.system.contollers" element1="/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.rest.api.demo.controllers{UserController.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1660814400831" units="1" version="1.0"/>
+</session>

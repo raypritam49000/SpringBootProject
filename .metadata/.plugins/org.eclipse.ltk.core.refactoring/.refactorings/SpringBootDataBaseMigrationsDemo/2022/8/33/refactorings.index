@@ -1,0 +1,4 @@
+1660642384728	Rename resource ' V2_data.sql'
+1660642434447	Rename resource ' V1.2_data.sql'
+1660642506326	Move 'V1__init.sql' to 'db'
+1660642695160	Move 'V1__init.sql' to 'migration'

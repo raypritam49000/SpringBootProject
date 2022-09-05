@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org" th:replace="base::layout(~{::section})">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<!-- Start Section Block -->
+<section>
+    <div class="card mr-3 ml-3">
+       <div class="card-body">
+           <h1 class="text-center">List of Students</h1>
+
+           <table class="table">
+           
+               <thead>
+               <tr>
+                   <th scope="col">#ID</th>
+                   <th scope="col">Name</th>
+                   <th scope="col">City</th>
+                   <th scope="col">Salary</th>
+                   <th scope="col">Action</th>
+               </tr>
+               </thead>
+               
+               
+               <tbody>
+               <tr th:each="student : ${students}">
+
+                   <th scope="row" th:text="${student.id}"></th>
+                   <td th:text="${student.name}"></td>
+                   <td th:text="${student.city}"></td>
+                   <td th:text="${student.salary}"></td>
+
+                   <td>
+                       
+                       <form th:action="@{'/updateStudentForm/'+${student.id}}" method="post">
+                           <button class="btn btn-outline-primary btn-sm" type="submit">Update</button>
+                           <a class="btn btn-outline-danger btn-sm" th:href="@{'/handleDeleteStudent/'+${student.id}}" >Delete</a> 
+                       </form>
+                   </td>
+               </tr>
+               </tbody>
+                
+           </table>
+
+       </div>  
+    </div>
+    
+</section>
+
+<!-- End Section Block -->
+</body>
+</html>

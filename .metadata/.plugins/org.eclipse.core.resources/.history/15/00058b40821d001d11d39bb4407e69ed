@@ -1,0 +1,5 @@
+package com.ray.pritam.services;
+
+public class ConsumeApiService {
+
+}

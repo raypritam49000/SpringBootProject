@@ -1,0 +1,22 @@
+server.port=8989
+
+spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+spring.datasource.url=jdbc:mysql://localhost:3306/test
+spring.datasource.username=root
+spring.datasource.password=1998
+
+spring.jpa.properties.hibernate.dialect = org.hibernate.dialect.MySQL8Dialect
+spring.jpa.properties.hibernate.show_sql=true
+spring.jpa.properties.hibernate.format_sql=true
+spring.jpa.hibernate.ddl-auto = validate
+
+
+spring.flyway.enabled=true
+
+spring.flyway.url=jdbc:mysql://localhost:3306/user
+spring.flyway.user=root
+spring.flyway.password=1998
+spring.flyway.schemas=student
+spring.flyway.locations=classpath:/db/migration
+
+

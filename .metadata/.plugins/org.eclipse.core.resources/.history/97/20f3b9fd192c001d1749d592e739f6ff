@@ -1,0 +1,7 @@
+package com.rest.api.services;
+
+import com.rest.api.dto.StudentDto;
+
+public interface StudentService {
+	public StudentDto createStudent(StudentDto studentDto);
+}

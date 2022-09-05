@@ -1,0 +1,26 @@
+package com.consume.rest.api.services;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
+import org.springframework.web.reactive.function.client.WebClient;
+
+import com.consume.rest.api.models.Book;
+
+import reactor.core.publisher.Flux;
+
+public class BookServiceImpl implements BookService {
+
+	@Autowired
+	private WebClient webClient;
+
+	@Override
+	public List<Book> findAll() {
+		Flux<Book> books = webClient.get().uri("/").accept(MediaType.APPLICATION_JSON).retrieve()
+				.bodyToFlux(Book.class);
+		List<Book> bookList = books.collectList().block();
+		return null;
+	}
+
+}

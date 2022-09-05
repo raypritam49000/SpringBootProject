@@ -1,0 +1,21 @@
+package com.ray.pritam.config;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.web.reactive.function.client.WebClient;
+import org.springframework.web.reactive.function.client.support.WebClientAdapter;
+import org.springframework.web.service.invoker.HttpServiceProxyFactory;
+
+@Configuration
+public class AppConfig {
+	
+    @Bean
+    public ChuckNorrisClient chuckNorrisClient() throws Exception {
+        WebClient webClient = WebClient.builder()
+                .baseUrl("https://api.chucknorris.io/")
+                .build();
+        HttpServiceProxyFactory factory = new HttpServiceProxyFactory(new WebClientAdapter(webClient));
+        factory.afterPropertiesSet();
+        return factory.createClient(ChuckNorrisClient.class);
+    }
+}

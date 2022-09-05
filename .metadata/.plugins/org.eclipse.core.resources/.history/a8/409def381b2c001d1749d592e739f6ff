@@ -1,0 +1,54 @@
+package com.rest.api.services.impl;
+
+import java.util.List;
+
+import org.modelmapper.ModelMapper;
+import org.springframework.stereotype.Service;
+
+import com.rest.api.dto.StudentDto;
+import com.rest.api.repository.StudentRepository;
+import com.rest.api.services.StudentService;
+
+@Service
+public class StudentServiceImpl implements StudentService{
+	
+	private final ModelMapper mapper;
+	private final StudentRepository studentRepository;
+	
+	public StudentServiceImpl(ModelMapper mapper, StudentRepository studentRepository) {
+		super();
+		this.mapper = mapper;
+		this.studentRepository = studentRepository;
+	}
+
+	@Override
+	public StudentDto createStudent(StudentDto studentDto) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<StudentDto> getAllStudents() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public StudentDto getStudentById(int id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Boolean deleteStudentById(int id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public StudentDto updateStudentById(int id, StudentDto studentDto) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}
