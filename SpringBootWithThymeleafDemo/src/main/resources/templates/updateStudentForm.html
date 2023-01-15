@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org" th:replace="base::layout(~{::section})">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title >Document</title>
+</head>
+<body>
+
+<!-- Start Section Block -->
+<section>
+    <div class="card mr-3 ml-3">
+        <div class="card-body">
+            <h1 class="text-center">Update Your Contacts</h1>
+            <div class="container-fluid mt-1">
+                <div class="row">
+                    <div class="col-md-8 offset-md-2">
+
+                        <form th:action="@{'/handleUpdateStudent/'+${student.id}}" method="post" th:object="${student}" enctype="multipart/form-data">
+ 
+                             <!--Name-->
+                           <div class="form-group">
+                               <label for="name">Enter Your Name</label>
+                               <input type="text" th:value="${student.name}" class="form-control" id="name" name="name" placeholder="Enter Here" required>
+                           </div>
+
+                           <!--City-->
+                           <div class="form-group">
+                               <label for="city">Enter Your City</label>
+                               <input type="text" th:value="${student.city}" class="form-control" id="city" name="city" placeholder="Enter Here" required>
+                           </div>
+
+                           <!--Salary-->
+                           <div class="form-group">
+                               <label for="salary">Enter Your Salary</label>
+                               <input type="text" th:value="${student.salary}" class="form-control" id="salary" name="salary" placeholder="Enter Here" required>
+                           </div>
+
+                            
+
+                            <div class="container text-center">
+                                <button type="submit" class="btn btn-outline-primary">Update Student</button>
+                                <button type="reset" class="btn btn-outline-danger">Reset</button>
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+</body>
+</html>

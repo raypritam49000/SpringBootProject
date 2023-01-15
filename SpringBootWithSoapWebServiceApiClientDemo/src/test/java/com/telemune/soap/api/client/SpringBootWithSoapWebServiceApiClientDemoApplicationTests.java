@@ -1,0 +1,13 @@
+package com.telemune.soap.api.client;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
+
+@SpringBootTest
+class SpringBootWithSoapWebServiceApiClientDemoApplicationTests {
+
+	@Test
+	void contextLoads() {
+	}
+
+}
